@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en" ng-app>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <script src="js/lib/angular.js"></script>
+</head>
+<body >
+    <div class="container">
+
+
+    <h1>FORMULARIO NG-MODEL</h1>
+
+
+      <div class="form-group">
+           <label for="">NOMBRE COMPLETO</label><br>
+           <input class="form-control" type="text" ng-model="nombre" >
+      </div>
+     <div class="form-group">
+           <label for="">LUGAR DE TRABAJO</label><br>
+           <input class="form-control" type="text" ng-model="lugar">
+      </div>
+       <div class="form-group">
+           <label for="">SALARIO EUROS</label><br>
+           <input class="form-control" type="text" ng-model="salario">
+      </div>
+
+      <hr>
+
+      <div>
+      NOMBRE: {{nombre | uppercase}}
+      </div>
+ <div>
+      LUGAR DE TRABAJO : {{lugar | lowercase}} </div>
+       <div>
+      SALARIO : {{salario | currency:"€ "}} </div>
+
+
+    </div>
+
+</body>
+</html>
