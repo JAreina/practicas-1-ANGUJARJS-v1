@@ -1,11 +1,14 @@
+
+
+//encapsular
 (function(){
 
-var app = angular.module('universidadApp',[ ]);
+var app = angular.module('jareina',[ ]);
 
 
 
 app.controller('listadoCtrl', ['$scope', function($scope){
- 
+
 
 $scope.personas=[
       {

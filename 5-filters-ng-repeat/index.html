@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html ng-app="universidadApp">
+<html ng-app="jareina">
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
         <title>Filtros - ng-repeat</title>
@@ -15,7 +15,7 @@
         <script src="js/lib/angular.min.js"></script>
 
         <script src="js/app.js"></script>
-        
+
         <style>
             .avatar{
                 width: 75px;
@@ -24,20 +24,20 @@
 
         </style>
 
-    </head>    
+    </head>
     <body>
 
         <div class="container" ng-controller="listadoCtrl">
-            
+
             <h1>Filtros</h1>
             <h4>Para el ng-repeat</h4>
             <hr>
 
-            
+     {{personas | json}}
 
-            
-            
-            
+
+
+
 
         </div><!-- fin del listadoCtrl -->
 
