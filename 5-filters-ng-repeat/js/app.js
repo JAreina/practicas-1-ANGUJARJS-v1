@@ -14,7 +14,7 @@
         "nombre": "Kari Carr",
         "avatar": "kari.jpg",
         "telefono": "(826) 453-3497",
-        "celular": "(801) 9175-8136"
+        "movil": "(801) 9175-8136"
       },
       {
         "id": 1,
@@ -22,7 +22,7 @@
         "nombre": "Tameka Gamble",
         "avatar": "tameka.jpg",
         "telefono": "(824) 438-2499",
-        "celular": "(801) 8595-8337"
+        "movil": "(801) 8595-8337"
       },
       {
         "id": 2,
@@ -30,7 +30,7 @@
         "nombre": "Charity Austin",
         "avatar": "charity.jpg",
         "telefono": "(817) 512-2258",
-        "celular": "(801) 9375-3830"
+        "movil": "(801) 9375-3830"
       },
       {
         "id": 3,
@@ -38,7 +38,7 @@
         "nombre": "Slater Hunt",
         "avatar": "slater.jpg",
         "telefono": "(842) 413-3023",
-        "celular": "(801) 9555-1729"
+        "movil": "(801) 9555-1729"
       },
       {
         "id": 4,
@@ -46,7 +46,7 @@
         "nombre": "Chen Hanson",
         "avatar": "chen.jpg",
         "telefono": "(966) 520-2696",
-        "celular": "(801) 9324-4423"
+        "movil": "(801) 9324-4423"
       },
       {
         "id": 5,
@@ -54,7 +54,7 @@
         "nombre": "Obrien Davis",
         "avatar": "obrien.jpg",
         "telefono": "(996) 595-3896",
-        "celular": "(801) 8195-2732"
+        "movil": "(801) 8195-2732"
       },
       {
         "id": 6,
@@ -62,7 +62,7 @@
         "nombre": "Le Haley",
         "avatar": "le.jpg",
         "telefono": "(967) 527-3286",
-        "celular": "(801) 8074-5225"
+        "movil": "(801) 8074-5225"
       },
       {
         "id": 7,
@@ -70,7 +70,7 @@
         "nombre": "Lester Carney",
         "avatar": "lester.jpg",
         "telefono": "(994) 465-3542",
-        "celular": "(801) 9044-7522"
+        "movil": "(801) 9044-7522"
       },
       {
         "id": 8,
@@ -78,7 +78,7 @@
         "nombre": "Rosario Perry",
         "avatar": "rosario.jpg",
         "telefono": "(848) 499-2977",
-        "celular": "(801) 8495-0625"
+        "movil": "(801) 8495-0625"
       },
       {
         "id": 9,
@@ -86,7 +86,7 @@
         "nombre": "Marilyn Huber",
         "avatar": "marilyn.jpg",
         "telefono": "(982) 580-3235",
-        "celular": "(801) 8184-2624"
+        "movil": "(801) 8184-2624"
       }
     ];
 
