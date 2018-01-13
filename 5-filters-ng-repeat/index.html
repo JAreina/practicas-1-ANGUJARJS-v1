@@ -18,8 +18,8 @@
 
         <style>
             .avatar{
-                width: 75px;
-                height: 75px;
+                width: 40px;
+                height: 40px;
             }
 
         </style>
@@ -34,20 +34,24 @@
             <hr>
 
 
-     <h5>filtro json</h5>
-     {{personas | json}}
 
-     <ul>
-       <li ng-repeat="persona in personas">
-                              {{persona.id}}
-                              {{persona.sexo}}
-                              {{persona.nombre}}
-                              {{persona.avatar}}
-                              {{persona.telefono}}
-                              {{persona.celular}}
 
-       </li>
-     </ul>
+<div class="row">
+  BÚSQUEDA:
+
+  <input type="text" ng-model="busqueda.nombre" class="form-control" placeholder="Término de búsqueda en la tabla">
+
+  Sexo:
+  <select name="" id=""ng-model="busqueda.sexo" class="form-control">
+    <option value="">INDIFERENTE</option>
+    <option value="mujer">MUJERES</option>
+    <option value="hombre">HOMBRES</option>
+  </select>
+</div>
+
+
+
+
 <table class="table table-striped">
 <tr>
   <th>NÚMERO</th>
@@ -59,11 +63,11 @@
 </tr>
 
 
-<tr ng-repeat="persona in personas">
+<tr ng-repeat="persona in personas | filter:busqueda">
         <td>  {{persona.id}}</td>
         <td>  {{persona.sexo}}</td>
         <td>  {{persona.nombre}}</td>
-        <td>  {{persona.avatar}}</td>
+        <td><img ng-src="img/{{persona.avatar}}" alt="" class="avatar img-circle">  </td>
         <td>{{persona.telefono}}</td>
         <td>{{persona.celular}}</td>
 </tr>
@@ -73,7 +77,20 @@
 
 
 
+<h1>filtro json</h1>
+{{personas | json}}
+<h1>NG-REPEAT</h1>
+<ul>
+  <li ng-repeat="persona in personas">
+                         {{persona.id}}
+                         {{persona.sexo}}
+                         {{persona.nombre}}
+                         {{persona.avatar}}
+                         {{persona.telefono}}
+                         {{persona.celular}}
 
+  </li>
+</ul>
         </div><!-- fin del listadoCtrl -->
 
     </body>
