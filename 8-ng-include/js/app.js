@@ -7,7 +7,7 @@ var app = angular.module('ejemplosApp',[ ]);
 app.controller('mainCtrl', ['$scope','$http', function($scope,$http){
 
 $scope.personas={};
-
+$scope.tabla = "./partials/tabla.html";
 $http.get('./json/personas.json').success((data)=>{
   $scope.personas = data.personas;
 })
