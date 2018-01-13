@@ -1,17 +1,14 @@
-
-
 //encapsular
-(function(){
+(function() {
 
-var app = angular.module('jareina',[ ]);
-
-
-// ARRAY DE PARAMETROS DEL CONTROLLER
-app.controller('listadoCtrl', ['$scope', function($scope){
+  var app = angular.module('jareina', []);
 
 
-$scope.personas=[
-      {
+  // ARRAY DE PARAMETROS DEL CONTROLLER
+  app.controller('listadoCtrl', ['$scope', function($scope) {
+
+
+    $scope.personas = [{
         "id": 0,
         "sexo": "hombre",
         "nombre": "Kari Carr",
@@ -95,7 +92,7 @@ $scope.personas=[
 
 
 
-}]);
+  }]);
 
 
 

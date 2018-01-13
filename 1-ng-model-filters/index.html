@@ -1,29 +1,31 @@
 <!DOCTYPE html>
 <html lang="en" ng-app>
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Document</title>
-    <link rel="stylesheet" href="css/bootstrap.min.css">
-    <script src="js/lib/angular.js"></script>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <link rel="stylesheet" href="css/bootstrap.min.css">
+  <script src="js/lib/angular.js"></script>
 </head>
-<body >
-    <div class="container">
 
-        <h1>FILTROS</h1>
-        <p>texto sin filtro: {{"jUAn"}}</p>
-        <p>texto: {{"jUAn" | uppercase}}</p>
-        <p> texto: {{"jUAn" | lowercase}}</p>
+<body>
+  <div class="container">
 
-          <p> moneda: {{234}}</p>
-        <p>filtro moneda: {{234 | currency}}</p>
-        <p>filtro moneda: {{234 | currency:"€ "}}</p>
+    <h1>FILTROS</h1>
+    <p>texto sin filtro: {{"jUAn"}}</p>
+    <p>texto: {{"jUAn" | uppercase}}</p>
+    <p> texto: {{"jUAn" | lowercase}}</p>
+
+    <p> moneda: {{234}}</p>
+    <p>filtro moneda: {{234 | currency}}</p>
+    <p>filtro moneda: {{234 | currency:"€ "}}</p>
 
 
-         <p>filtro número sin filtro: {{2343333}}</p>
-        <p>filtro número: {{2343333 | number}}</p>
-        <p>filtro número: {{2342222 | number}}</p>
+    <p>filtro número sin filtro: {{2343333}}</p>
+    <p>filtro número: {{2343333 | number}}</p>
+    <p>filtro número: {{2342222 | number}}</p>
 
 
     <hr>
@@ -33,7 +35,7 @@
     <input type="text" ng-model="nombre">
 
     <hr>
-<label for="">País seleccionado: {{pais}}</label>
+    <label for="">País seleccionado: {{pais}}</label>
     <select class="form-control" name="" id="" ng-model="pais">
         <option value="1">Francia</option>
         <option value="2">Portugal</option>
@@ -41,7 +43,7 @@
     </select>
 
 
-   <hr>
+    <hr>
     <label for=""> seleccionada opción {{opt1}} {{opt2}}</label></br>
     <input type="checkbox" ng-model="opt1"> opcion1</br>
     <input type="checkbox" ng-model="opt2"> opcion2
@@ -51,13 +53,14 @@
 
     <label for="">SELECCIONE GÉNERO: {{genero}}</label>
 
-  </br>
-      <input type="radio" value="M" ng-model="genero"> MASCULINO
+    </br>
+    <input type="radio" value="M" ng-model="genero"> MASCULINO
     </BR>
-      <input type="radio" value="F" ng-model="genero"> FEMENINO
+    <input type="radio" value="F" ng-model="genero"> FEMENINO
 
 
-    </div>
+  </div>
 
 </body>
+
 </html>

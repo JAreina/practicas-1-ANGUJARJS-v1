@@ -1,100 +1,96 @@
 <!DOCTYPE html>
 <html ng-app="jareina">
-    <head>
-        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
-        <title>Filtros - ng-repeat</title>
+
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+  <title>Filtros - ng-repeat</title>
 
 
-        <!-- Incluir Bootstrap -->
-        <link rel="stylesheet" href="css/bootstrap.min.css">
+  <!-- Incluir Bootstrap -->
+  <link rel="stylesheet" href="css/bootstrap.min.css">
 
-        <!-- Animate.css -->
-        <link rel="stylesheet" href="css/animate.css">
+  <!-- Animate.css -->
+  <link rel="stylesheet" href="css/animate.css">
 
-        <!-- Incluir AngularJS -->
-        <script src="js/lib/angular.min.js"></script>
+  <!-- Incluir AngularJS -->
+  <script src="js/lib/angular.min.js"></script>
 
-        <script src="js/app.js"></script>
+  <script src="js/app.js"></script>
 
-        <style>
-            .avatar{
-                width: 40px;
-                height: 40px;
-            }
-            .clica{
-              cursor:pointer;
-            }
+  <style>
+    .avatar {
+      width: 40px;
+      height: 40px;
+    }
 
-        </style>
+    .clica {
+      cursor: pointer;
+    }
+  </style>
 
-    </head>
-    <body>
+</head>
 
-        <div class="container" ng-controller="listadoCtrl">
+<body>
 
-            <h1>Filtros</h1>
-            <h4>Para el ng-repeat</h4>
-            <hr>
+  <div class="container" ng-controller="listadoCtrl">
+
+    <h1>Filtros</h1>
+    <h4>Para el ng-repeat</h4>
+    <hr>
 
 
 
 
-<div class="row">
-  BÚSQUEDA:
+    <div class="row">
+      BÚSQUEDA:
 
-  <input type="text" ng-model="busqueda.nombre" class="form-control" placeholder="Término de búsqueda en la tabla">
-
-  Sexo:
-  <select name="" id=""ng-model="busqueda.sexo" class="form-control">
+      <input type="text" ng-model="busqueda.nombre" class="form-control" placeholder="Término de búsqueda en la tabla"> Sexo:
+      <select name="" id="" ng-model="busqueda.sexo" class="form-control">
     <option value="">INDIFERENTE</option>
     <option value="mujer">MUJERES</option>
     <option value="hombre">HOMBRES</option>
   </select>
-</div>
+    </div>
 
 
 
 
-<table class="table table-striped">
-<tr>
-  <th>NÚMERO</th>
-  <th><a class="clica" ng-click="columna='sexo';reverse = !reverse;">SEXO</a></th>
-  <th><a class="clica" ng-click="columna='nombre';reverse = !reverse;">NOMBRE</a></th>
-  <th>AVATAR</th>
-  <th>TELÉFONO</th>
-  <th>MOVIL</th>
-</tr>
+    <table class="table table-striped">
+      <tr>
+        <th>NÚMERO</th>
+        <th><a class="clica" ng-click="columna='sexo';reverse = !reverse;">SEXO</a></th>
+        <th><a class="clica" ng-click="columna='nombre';reverse = !reverse;">NOMBRE</a></th>
+        <th>AVATAR</th>
+        <th>TELÉFONO</th>
+        <th>MOVIL</th>
+      </tr>
 
 
-<tr ng-repeat="persona in personas | filter:busqueda | orderBy: columna :reverse">
-        <td>  {{persona.id}}</td>
-        <td>  {{persona.sexo}}</td>
-        <td>  {{persona.nombre}}</td>
-        <td><img ng-src="img/{{persona.avatar}}" alt="" class="avatar img-circle">  </td>
+      <tr ng-repeat="persona in personas | filter:busqueda | orderBy: columna :reverse">
+        <td> {{persona.id}}</td>
+        <td> {{persona.sexo}}</td>
+        <td> {{persona.nombre}}</td>
+        <td><img ng-src="img/{{persona.avatar}}" alt="" class="avatar img-circle"> </td>
         <td>{{persona.telefono}}</td>
         <td>{{persona.celular}}</td>
-</tr>
+      </tr>
 
 
-</table>
+    </table>
 
 
 
-<h1>filtro json</h1>
-{{personas | json}}
-<h1>NG-REPEAT</h1>
-<ul>
-  <li ng-repeat="persona in personas">
-                         {{persona.id}}
-                         {{persona.sexo}}
-                         {{persona.nombre}}
-                         {{persona.avatar}}
-                         {{persona.telefono}}
-                         {{persona.celular}}
+    <h1>filtro json</h1> {{personas | json}}
+    <h1>NG-REPEAT</h1>
+    <ul>
+      <li ng-repeat="persona in personas">
+        {{persona.id}} {{persona.sexo}} {{persona.nombre}} {{persona.avatar}} {{persona.telefono}} {{persona.celular}}
 
-  </li>
-</ul>
-        </div><!-- fin del listadoCtrl -->
+      </li>
+    </ul>
+  </div>
+  <!-- fin del listadoCtrl -->
 
-    </body>
+</body>
+
 </html>
