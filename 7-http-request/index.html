@@ -15,18 +15,32 @@
         <script src="js/lib/angular.min.js"></script>
 
         <script src="js/app.js"></script>
-        
-    </head>    
+
+    </head>
     <body>
 
         <div class="container" ng-controller="mainCtrl">
-            
+
             <h1>$HTTP Request</h1>
             <h4>Data dinámica</h4>
             <hr>
-            
 
 
+            <h1>FILTER PERSONALIZADO prettyJSON</h1>
+<pre>
+{{personas | prettyJSON}}
+</pre>
+<ul>
+  <li ng-repeat="persona in personas">
+    {{persona.id}}
+      {{persona.sexo}}
+        {{persona.nombre}}
+          {{persona.snombre}}
+            {{persona.telefono}}
+              {{persona.movil}}
+
+  </li>
+</ul>
 
 
         </div><!-- fin del listadoCtrl -->
