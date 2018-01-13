@@ -33,8 +33,43 @@
             <h4>Para el ng-repeat</h4>
             <hr>
 
+
+     <h5>filtro json</h5>
      {{personas | json}}
 
+     <ul>
+       <li ng-repeat="persona in personas">
+                              {{persona.id}}
+                              {{persona.sexo}}
+                              {{persona.nombre}}
+                              {{persona.avatar}}
+                              {{persona.telefono}}
+                              {{persona.celular}}
+
+       </li>
+     </ul>
+<table class="table table-striped">
+<tr>
+  <th>NÚMERO</th>
+  <th>SEXO</th>
+  <th>NOMBRE</th>
+  <th>AVATAR</th>
+  <th>TELÉFONO</th>
+  <th>MOVIL</th>
+</tr>
+
+
+<tr ng-repeat="persona in personas">
+        <td>  {{persona.id}}</td>
+        <td>  {{persona.sexo}}</td>
+        <td>  {{persona.nombre}}</td>
+        <td>  {{persona.avatar}}</td>
+        <td>{{persona.telefono}}</td>
+        <td>{{persona.celular}}</td>
+</tr>
+
+
+</table>
 
 
 

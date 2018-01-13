@@ -6,7 +6,7 @@
 var app = angular.module('jareina',[ ]);
 
 
-
+// ARRAY DE PARAMETROS DEL CONTROLLER
 app.controller('listadoCtrl', ['$scope', function($scope){
 
 
