@@ -3,7 +3,7 @@ app.config(function( $routeProvider) {
 
                       $routeProvider.when('/', {
                           templateUrl : 'partials/home.html',
-                           controller :'mainCtrl'
+                           controller :'inicioCtrl'
                         })
                         .when('/autores', {
                           templateUrl : 'partials/autores.html',
