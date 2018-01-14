@@ -34,6 +34,7 @@
 <h1>datos meteorólogicos</h1>
 
 <p>PAÍS: {{clima.sys.country}}</p>
+<p>CIUDAD: {{clima.name}}</p>
 <p>LATITUD: {{clima.coord.lat}}</p>
 
 <p>LONGITUD: {{clima.coord.lon}}</p>
@@ -47,6 +48,7 @@
 <p>AMANECE: {{clima.sys.sunrise | date:'HH:mm:ss'}}</p>
 <p>ANOCHECE: {{clima.sys.sunset | date:'HH:mm:ss'}}</p>
 
+<p>ANOCHECE: {{clima.sys.sunset.toString() }}</p>
 <pre>
 {{ clima | prettyJSON}}
         </pre>
