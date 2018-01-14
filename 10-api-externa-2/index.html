@@ -1,39 +1,59 @@
 <!DOCTYPE html>
-<html ng-app="ejemplosApp">
-    <head>
-        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
-        <title>El Clima</title>
+<html ng-app="jareina">
+
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+  <title>El tiempo</title>
 
 
-        <!-- Incluir Bootstrap -->
-        <link rel="stylesheet" href="css/bootstrap.min.css">
+  <!-- Incluir Bootstrap -->
+  <link rel="stylesheet" href="css/bootstrap.min.css">
 
-        <!-- Animate.css -->
-        <link rel="stylesheet" href="css/animate.css">
+  <!-- Animate.css -->
+  <link rel="stylesheet" href="css/animate.css">
 
-        <!-- Incluir AngularJS -->
-        <script src="js/lib/angular.min.js"></script>
+  <!-- Incluir AngularJS -->
+  <script src="js/lib/angular.min.js"></script>
 
-        <script src="js/app.js"></script>
-        
-    </head>    
-    <body>
+  <script src="js/app.js"></script>
 
-        <div class="container" ng-controller="mainCtrl">
-            
-            <h1>Clima</h1>
-            <h4>Manejo de recursos online</h4>
-            <hr>
-            
+</head>
 
+<body>
 
-            
+  <div class="container" ng-controller="mainCtrl">
 
-            <br><br>
-            {{ clima | json }}
+    <h1>El tiempo </h1>
+    <h4>Manejo de recursos online</h4>
+    <hr>
+
+    <h4>PETICIÓN DE COORDENADAS</h4> {{url }}
 
 
-        </div><!-- fin del listadoCtrl -->
+    <br>
+<h1>datos meteorólogicos</h1>
 
-    </body>
+<p>PAÍS: {{clima.sys.country}}</p>
+<p>LATITUD: {{clima.coord.lat}}</p>
+
+<p>LONGITUD: {{clima.coord.lon}}</p>
+<p>PRONOSTICO: {{clima.weather[0].main}}. {{clima.weather[0].description}}</p>
+<p>TEMPERATURA: {{kelvinCelsius(clima.main.temp)}}</p>
+<p>PRESIÓN: {{clima.main.pressure}}</p>
+<p>HUMEDAD: {{clima.main.humidity}}</p>
+<p>TEMPERATURA MÍN: {{kelvinCelsius(clima.main.temp_min)}}</p>
+<p>TEMPERATURA MAX: {{kelvinCelsius(clima.main.temp_max)}}</p>
+
+<p>AMANECE: {{clima.sys.sunrise | date:'HH:mm:ss'}}</p>
+<p>ANOCHECE: {{clima.sys.sunset | date:'HH:mm:ss'}}</p>
+
+<pre>
+{{ clima | prettyJSON}}
+        </pre>
+
+  </div>
+  <!-- fin del listadoCtrl -->
+
+</body>
+
 </html>
