@@ -1,39 +1,43 @@
 <!DOCTYPE html>
 <html ng-app="jareina" ng-controller="mainCtrl">
-    <head>
-        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
-        <title>JAreina</title>
+
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+  <title>JAreina</title>
 
 
-        <!-- Incluir Bootstrap -->
-        <link rel="stylesheet" href="css/bootstrap.min.css">
+  <!-- Incluir Bootstrap -->
+  <link rel="stylesheet" href="css/bootstrap.min.css">
 
-        <!-- Animate.css -->
-        <link rel="stylesheet" href="css/animate.css">
+  <!-- Animate.css -->
+  <link rel="stylesheet" href="css/animate.css">
 
-        <!-- Estilo personalizado -->
-        <link rel="stylesheet" href="css/style.css">
+  <!-- Estilo personalizado -->
+  <link rel="stylesheet" href="css/style.css">
 
-        <!-- Incluir AngularJS -->
-        <script src="js/lib/angular.min.js"></script>
-<script src="js/lib/angular-route.min.js"></script>
-        <script src="js/app.js"></script>
-<script src="js/config.js"></script>
-
- 
-    </head>
-    <body>
+  <!-- Incluir AngularJS -->
+  <script src="js/lib/angular.min.js"></script>
+  <script src="js/lib/angular-route.min.js"></script>
+  <script src="js/app.js"></script>
+  <script src="js/config.js"></script>
 
 
-            <div ng-include="menu"></div>
+</head>
+
+<body>
 
 
-        <div class="container" >
-        <!-- La pagina principal ira aquí -->
-        <div ng-view></div>
-
-        </div><!-- /.container -->
+  <div ng-include="menu"></div>
 
 
-    </body>
+  <div class="container">
+    <!-- La pagina principal ira aquí -->
+    <div ng-view></div>
+
+  </div>
+  <!-- /.container -->
+
+
+</body>
+
 </html>

@@ -1,21 +1,23 @@
-app.config(function( $routeProvider) {
+app.config(function($routeProvider) {
 
 
-                      $routeProvider.when('/', {
-                          templateUrl : 'partials/home.html',
-                           controller :'inicioCtrl'
-                        })
-                        .when('/autores', {
-                          templateUrl : 'partials/autores.html',
-                          controller :'autoresCtrl'
+  $routeProvider.when('/', {
+      templateUrl: 'partials/home.html',
+      controller: 'inicioCtrl'
+    })
+    .when('/autores', {
+      templateUrl: 'partials/autores.html',
+      controller: 'autoresCtrl'
 
-                        })
-                        .when('/libros', {
-                          templateUrl : 'partials/libros.html',
-                          controller:'librosCtrl'
+    })
+    .when('/libros', {
+      templateUrl: 'partials/libros.html',
+      controller: 'librosCtrl'
 
-                        })
+    })
 
-                        $routeProvider.otherwise({redirectTo:'/'});
+  $routeProvider.otherwise({
+    redirectTo: '/'
+  });
 
-            });
+});
