@@ -1,0 +1,28 @@
+<h1>ALUMNO : {{alumno.nombre}}</h1>
+<p>MENSAJE : {{message}}</p>
+<p>CODIGO : {{codigo}}</p>
+<p>ALUMNO : {{alumno | json}}</p>
+<div class="row alumno">
+  <div class="col-sm-6 pull-right">
+
+    <form>
+      <label for="codigo">CÓDIGO</label>
+      <input type="text" ng-model="alumno.codigo" readonly id="codigo" disabled class="form-control">
+
+      <label for="nombre">NOMBRE</label>
+      <input type="text" ng-model="alumno.nombre" id="nombre" class="form-control">
+
+      <label for="nombre">TELÉNOFO</label>
+      <input type="text" ng-model="alumno.telefono" id="telefono" class="form-control">
+
+      <label for="direccion">DIRECCIÓN</label>
+      <textarea name="dirección" rows="8" cols="80" ng-model="alumno.direccion" class="form-control"></textarea>
+
+      <button type="submit" name="button" class="btn btn-info">GUARDAR </button>
+  </div>
+
+
+  </form>
+
+
+</div>

@@ -10,11 +10,13 @@
   	<td>CÓDIGO</td>
   	<td>NOMBRE</td>
   	<td>TELÉFONO</td>
+		<td>VER</td>
   </tr>
 <tr ng-repeat="alumno in alumnos | limitTo: posicion | limitTo: -5">
 	<td>{{alumno.codigo}}</td>
 	<td>{{alumno.nombre}}</td>
 	<td>{{alumno.telefono | telefono}}</td>
+	<td><a href="#/alumno/{{alumno.codigo}}">VER</a></td>
 </tr>
 
 	</table>
