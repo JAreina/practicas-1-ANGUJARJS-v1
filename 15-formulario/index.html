@@ -1,77 +1,106 @@
 <!DOCTYPE html>
 <html ng-app="bonusApp" ng-controller="mainCtrl">
-    <head>
-        <meta charset="utf-8">
-        <meta content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0' name='viewport' />
 
-        <title>Formularios</title>
+<head>
+  <meta charset="utf-8">
+  <meta content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0' name='viewport' />
 
-
-        <!-- Incluir Bootstrap -->
-        <link rel="stylesheet" href="css/bootstrap.min.css">
-
-        <!-- Font Awesome -->
-        <link rel="stylesheet" href="font-awesome/css/font-awesome.min.css">
-
-        <!-- Incluir AngularJS -->
-        <script src="js/lib/angular.min.js"></script>
-        <script src="js/app.js"></script>
-        
+  <title>Formularios</title>
 
 
-    </head>    
-    <body>
-        
-        <div class="container">
+  <!-- Incluir Bootstrap -->
+  <link rel="stylesheet" href="css/bootstrap.min.css">
 
-        <h1>Formularios</h1>
-        <hr>
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="font-awesome/css/font-awesome.min.css">
 
-        <div class="row">
-            <div class="col-md-7">
-                
-                <form>
-                
-                    <div class="form-group">
-                        <label for="nombre">Nombre</label>
-                        <input type="text" id="nombre" class="form-control">
-                    </div>
+  <!-- Incluir AngularJS -->
+  <script src="js/lib/angular.min.js"></script>
+  <script src="js/app.js"></script>
 
-                    <div class="form-group">
-                        <label for="edad">Edad</label>
-                        <input type="number" id="edad" class="form-control">
-                    </div>
 
-                    <div class="form-group">
-                        <label for="genero">Genero</label>
-                        <select class="form-control" id="genero">
+
+</head>
+
+<body>
+
+  <div class="container">
+
+    <h1>Formularios</h1>
+    <hr>
+
+    <div class="row">
+      <div class="col-md-4">
+
+        <form name="formulario" ng-submit="guardar(formulario.$valid)">
+
+          <div class="form-group" ng-class="{
+            'has-error':formulario.nombre.$invalid && !formulario.$pristine,
+              'has-success': !formulario.nombre.$invalid && !formulario.$pristine
+          }">
+            <label for="nombre">Nombre</label>
+            <input type="text" id="nombre" name="nombre" class="form-control"
+            ng-model="formData.nombre" required>
+            <p class="help-block" ng-hide="formulario.nombre.$valid && !formulario.$pristine"
+          >Campo Requerido *</p>
+          </div>
+
+          <div class="form-group">
+            <label for="edad">Edad</label>
+            <input type="number" id="edad" name="edad" class="form-control"
+            ng-model="formData.edad">
+          </div>
+
+          <div class="form-group">
+            <label for="genero">Genero</label>
+            <select class="form-control" id="genero" name="genero"
+            ng-model="formData.genero">
                             <option value=""></option>
                             <option value="H">Hombre</option>
                             <option value="M">Mujer</option>
                         </select>
-                    </div>
+          </div>
 
-                    <div class="form-group">
-                        <label for="email">Email</label>
-                        <input type="email" id="email" class="form-control">
-                    </div>
+          <div class="form-group "ng-class="{
+            'has-error':formulario.email.$invalid && !formulario.$pristine,
+              'has-success': !formulario.email.$invalid && !formulario.$pristine
+          }">
+            <label for="email">Email</label>
+            <input type="email" id="email" name="email" class="form-control"
+            ng-model="formData.email" required
+            >
+            <p class="help-block" ng-show="formulario.email.$error.required"
+          >Campo Requerido *</p>
+          <p class="help-block" ng-show="formulario.email.$error.email"
+        >Formato de email incorrecto</p>
+          </div>
 
-                    <button type="submit" class="btn btn-primary"> Guardar</button>
-                </form>            
+          <button type="submit" class="btn btn-primary"> Guardar</button>
+        </form>
 
-            </div>
+      </div>
 
-            <!-- Bloque de codigo -->
-            <div class="col-md-5">
-                <label>Estructura de datos</label>
-                <pre></pre>
-            </div>
 
-        </div>
 
-            
 
-        </div>
-        
-    </body>
+     <div class="col-sm-4">
+       <div>nombre : {{formulario.nombre.$viewValue}}</div>
+       <div>edad : {{formulario.edad.$viewValue}}</div>
+       <div>genero: {{formulario.genero.$viewValue}}</div>
+       <div>email: {{formulario.email.$viewValue}}</div>
+     </div>
+      <!--  angular crea la variable con el name del formulario donde guarda datos sobre el formulario  -->
+      <div class="col-md-4">
+        <label>Estructura de datos que guarda el formulario sobre validaciones etc</label>
+        <pre>{{formulario | json}}</pre>
+      </div>
+
+    </div>
+
+
+
+  </div>
+
+</body>
+
 </html>
