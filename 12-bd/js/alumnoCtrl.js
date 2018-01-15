@@ -25,6 +25,7 @@ app.controller('alumnoCtrl', ['$scope', '$routeParams',
     //RECUPERAR UN alumno
     $http.get('php/servicios/alumnos.getAlumno.php?c=' + $scope.codigo)
       .success((data) => {
+        // si codigo no existe vuelve a alumnos
         if (data.err !== undefined) {
           window.location = "#/alumnos"
         }
