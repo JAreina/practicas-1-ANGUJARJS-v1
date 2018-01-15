@@ -11,7 +11,7 @@
   	<td>NOMBRE</td>
   	<td>TELÉFONO</td>
   </tr>
-<tr ng-repeat="alumno in alumnos">
+<tr ng-repeat="alumno in alumnos | limitTo: posicion | limitTo: -5">
 	<td>{{alumno.codigo}}</td>
 	<td>{{alumno.nombre}}</td>
 	<td>{{alumno.telefono | telefono}}</td>
@@ -24,3 +24,5 @@
 
 
 </table>
+<button class="btn btn-danger" ng-click="siguientes()">Sig.</button>
+<button class="btn btn-danger" ng-click="anteriores()"> Ant.</button>
