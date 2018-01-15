@@ -1,5 +1,9 @@
 body {
   padding-top: 50px;
+  overflow-x: hidden;
+}
+#navbar li a:hover{
+  color:tomato;
 }
 .row.alumno{
   background-color: grey;
@@ -24,4 +28,11 @@ body {
 
  .nuevoAlumno{
    padding:10px;
+ }
+
+
+
+
+ .fab.fa-angular{
+font-size:3em; color:Tomato;
  }

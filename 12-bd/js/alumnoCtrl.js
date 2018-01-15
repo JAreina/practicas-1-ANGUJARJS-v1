@@ -43,11 +43,6 @@ $scope.alumno = {};
     }
 
 
-
-
-
-
-
     /* guardar alumno*/
     $scope.guardarElAlumno = () => {
 
