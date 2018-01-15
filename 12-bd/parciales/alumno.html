@@ -4,21 +4,22 @@
 <p>ALUMNO : {{alumno | json}}</p>
 <div class="row alumno">
   <div class="col-sm-6 pull-right">
-
-    <form>
+<H2>EDITAR</H2>
+    <form ng-submit="guardarElAlumno()">
       <label for="codigo">CÓDIGO</label>
       <input type="text" ng-model="alumno.codigo" readonly id="codigo" disabled class="form-control">
 
       <label for="nombre">NOMBRE</label>
-      <input type="text" ng-model="alumno.nombre" id="nombre" class="form-control">
+      <input  required type="text" ng-model="alumno.nombre" id="nombre" class="form-control">
 
       <label for="nombre">TELÉNOFO</label>
-      <input type="text" ng-model="alumno.telefono" id="telefono" class="form-control" ui-mask="{{telefonoMask}}">
+      <input  required type="text" ng-model="alumno.telefono" id="telefono" class="form-control" ui-mask="{{telefonoMask}}">
 
       <label for="direccion">DIRECCIÓN</label>
-      <textarea name="dirección" rows="8" cols="80" ng-model="alumno.direccion" class="form-control"></textarea>
+      <textarea required name="dirección" rows="8" cols="80" ng-model="alumno.direccion" class="form-control"></textarea>
 
       <button type="submit" name="button" class="btn btn-info">GUARDAR </button>
+      <p class="text-danger animated fadeIn fast guardado" ng-show="guardado">Guardado correctamente</p>
   </div>
 
 

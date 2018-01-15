@@ -25,3 +25,6 @@ INYECCIÓN --- EN CONTROLLER DENTRO DEL ARRAY '$http',
 ng-route
 
 - angular-ui    mask
+
+---------------------------
+ng-submit

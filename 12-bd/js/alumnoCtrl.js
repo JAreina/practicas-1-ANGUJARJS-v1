@@ -10,6 +10,8 @@ app.controller('alumnoCtrl', ['$scope', '$routeParams',
     // recoger parametro
     $scope.codigo = $routeParams.codigo;
 
+
+
     /*añadir más parametros
      en config.js
      .when('/alumno/:codigo/:nombre',{
@@ -19,6 +21,10 @@ app.controller('alumnoCtrl', ['$scope', '$routeParams',
 
     $scope.nombre = $routeParams.nombre;
     */
+
+// mensaje alumno Guardado
+$scope.guardado = false;
+
 
     $scope.alumno = {};
 
@@ -32,5 +38,23 @@ app.controller('alumnoCtrl', ['$scope', '$routeParams',
         $scope.alumno = data;
       })
 
-  }
-]);
+
+   /* guardar alumno*/
+   $scope.guardarElAlumno= ()=>{
+       //alert("venga ya")
+      $http.post('php/servicios/alumnos.guardar.php', $scope.alumno)
+              .success((data)=>{
+                  //   alert("GUARDADO")
+                  if(data.err ===false) $scope.guardado = true;
+
+                // para que desaparezca el mensaje
+                  setTimeout(()=>{
+                    $scope.guardado = false
+                        $scope.$apply();
+                  },4000);
+              })
+   }
+
+
+
+  }]);

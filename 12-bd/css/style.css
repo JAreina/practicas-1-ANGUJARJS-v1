@@ -6,10 +6,18 @@ body {
   color:rgb(7, 8, 7);
   margin-bottom: 100px;
   padding: 20px;
+  height: 650px;
 }
 .row.alumno label{
   padding: 1.7%;
 }
  .row.alumno button {
    margin-top: 10px;
+ }
+
+ .guardado{
+   position: relative;
+   top: -300px;
+   right: 500px;
+
  }
