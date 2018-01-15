@@ -1,0 +1,26 @@
+<h1>Alumnos</h1>
+<p>
+	Esta es la página de Alumnos
+</p>
+{{alumnos | json}}
+
+<div class="row">
+	<table class="table table-responsive">
+  <tr>
+  	<td>CÓDIGO</td>
+  	<td>NOMBRE</td>
+  	<td>TELÉFONO</td>
+  </tr>
+<tr ng-repeat="alumno in alumnos">
+	<td>{{alumno.codigo}}</td>
+	<td>{{alumno.nombre}}</td>
+	<td>{{alumno.telefono | telefono}}</td>
+</tr>
+
+	</table>
+</div>
+<table class="table table-responsive">
+
+
+
+</table>
