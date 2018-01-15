@@ -10,7 +10,7 @@ app.controller('alumnoCtrl', ['$scope', '$routeParams',
     // recoger parametro
     $scope.codigo = $routeParams.codigo;
 
-
+$scope.alumno = {};
 
     /*añadir más parametros
      en config.js
@@ -22,39 +22,66 @@ app.controller('alumnoCtrl', ['$scope', '$routeParams',
     $scope.nombre = $routeParams.nombre;
     */
 
-// mensaje alumno Guardado
-$scope.guardado = false;
+    // mensaje alumno Guardado
+    $scope.guardado = false;
 
+    // crear nuevo alumnos
+    $scope.creandoNuevo = false;
 
-    $scope.alumno = {};
-
-    //RECUPERAR UN alumno
-    $http.get('php/servicios/alumnos.getAlumno.php?c=' + $scope.codigo)
-      .success((data) => {
-        // si codigo no existe vuelve a alumnos
-        if (data.err !== undefined) {
-          window.location = "#/alumnos"
-        }
-        $scope.alumno = data;
-      })
-
-
-   /* guardar alumno*/
-   $scope.guardarElAlumno= ()=>{
-       //alert("venga ya")
-      $http.post('php/servicios/alumnos.guardar.php', $scope.alumno)
-              .success((data)=>{
-                  //   alert("GUARDADO")
-                  if(data.err ===false) $scope.guardado = true;
-
-                // para que desaparezca el mensaje
-                  setTimeout(()=>{
-                    $scope.guardado = false
-                        $scope.$apply();
-                  },4000);
-              })
-   }
+    if ($scope.codigo == "nuevo") {
+      $scope.creandoNuevo = true;
+    } else {
+      //RECUPERAR UN alumno
+      $http.get('php/servicios/alumnos.getAlumno.php?c=' + $scope.codigo)
+        .success((data) => {
+          // si codigo no existe vuelve a alumnos
+          if (data.err !== undefined) {
+            window.location = "#/alumnos"
+          }
+          $scope.alumno = data;
+        })
+    }
 
 
 
-  }]);
+
+
+
+
+    /* guardar alumno*/
+    $scope.guardarElAlumno = () => {
+
+      if($scope.creandoNuevo){
+        //CREAR NUEVO ALUMNO
+        $http.post('php/servicios/alumnos.crear.php', $scope.alumno)
+          .success((data) => {
+            //   alert("GUARDADO")
+            if (data.err === false) $scope.guardado = true;
+
+            // para que desaparezca el mensaje
+            setTimeout(() => {
+              $scope.guardado = false
+              $scope.$apply(); // para que lo aplique ya que setTimeout es sincrono
+            }, 4000);
+          })
+      }else{
+        //ACTUALIZAR
+        $http.post('php/servicios/alumnos.guardar.php', $scope.alumno)
+          .success((data) => {
+            //   alert("GUARDADO")
+            if (data.err === false) $scope.guardado = true;
+
+            // para que desaparezca el mensaje
+            setTimeout(() => {
+              $scope.guardado = false
+              $scope.$apply(); // para que lo aplique ya que setTimeout es sincrono
+            }, 4000);
+          })
+      }
+
+    }
+
+
+
+  }
+]);
