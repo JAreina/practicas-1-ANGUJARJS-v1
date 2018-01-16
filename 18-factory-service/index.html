@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="promesaApp">
+<head>
+	<meta charset="UTF-8">
+	<title>Promesas</title>
+
+	<script src="js/lib/angular.min.js"></script>
+	<script src="angular/app.js"></script>
+	<script src="angular/controladores.js"></script>
+	<script src="angular/services.js"></script>
+	<link rel="stylesheet" href="css/bootstrap.min.css">
+
+</head>
+<body>
+
+
+<div ng-controller="personasCtrl">
+
+<div class="container">
+	<h3>servicios</h3>
+	<div ng-show="personas.cargando">CARGARDO DATOS... ESPERE...</div>
+	<pre ng-show="!personas.cargando">{{personas | json}}</pre>
+</div>
+
+
+</div>
+
+
+
+</body>
+</html>
